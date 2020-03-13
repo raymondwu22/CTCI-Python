@@ -1,7 +1,6 @@
 # def URLify(s, length):
 #     return s[:length].replace(' ', '%20')
 
-
 def URLify(s, length):
     string = s.strip() # remove leading and trailing spaces
     solution = list(string)
