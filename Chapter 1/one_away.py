@@ -1,3 +1,4 @@
+#O(N)
 def one_away(str1, str2):
     char_set = [0 for _ in range(128)]
 
@@ -13,7 +14,7 @@ def one_away(str1, str2):
     for item in char_set:
         if item > 0:
             pos_count += item
-        else:
+        elif item < 0:
             neg_count += item
 
     return neg_count > -2 and pos_count < 2

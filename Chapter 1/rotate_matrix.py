@@ -9,7 +9,6 @@ E: empty matrix, even and odd values for n
 import unittest
 
 def rotate_matrix(matrix):
-    n = len(matrix)
     # reverse matrix
     matrix = matrix[::-1]
 

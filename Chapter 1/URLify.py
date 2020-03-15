@@ -1,32 +1,17 @@
-# def URLify(s, length):
-#     return s[:length].replace(' ', '%20')
+def URLify(string, length):
+    string = string.strip()
+    count_spaces = string.count(' ')
+    newLength = length + 2 * count_spaces
+    solution = [char for char in string] + [0] * count_spaces * 2
 
-def URLify(s, length):
-    string = s.strip() # remove leading and trailing spaces
-    solution = list(string)
-    numOfSpaces = string.count(' ')
-
-    # for every space, need two additional chars to accomodate '%20'
-    new_length = length + numOfSpaces * 2
-
-    for f in range(length, new_length):
-        solution.append('0')
-
-    # track index of solution
-    index = new_length
-
-    # start filling character from the end
-    for j in reversed(range(length)):
-        # # replace spaces
-        if string[j] == ' ':
-            solution[index-3: index] = '%20'
-            index -= 3
+    for i in range(length - 1, 0, -1):
+        if string[i] == ' ':
+            solution[newLength - 3:newLength] = '%20'
+            newLength -= 3
         else:
-            # move our characters
-            solution[index - 1] = solution[j]
-            index -= 1
+            solution[newLength - 1] = string[i]
+            newLength -= 1
     return ''.join(solution)
-
 
 def testURLify():
     print('testing URLify()...', end=" ")

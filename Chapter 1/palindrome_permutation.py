@@ -1,4 +1,5 @@
-def palindrom_permutation(phrase):
+#O(N)
+def palindrome_permutation(phrase):
     char_set = [0 for _ in range(128)]
     phrase = phrase.replace(" ", "").lower()
 
@@ -17,16 +18,16 @@ def palindrom_permutation(phrase):
     return odd_count <= 1
 
 
-def testpalindrom_permutation():
+def testpalindrome_permutation():
     print('testing palindrom_permutation()...', end=" ")
-    assert(palindrom_permutation("Taco cat") == True)
-    assert(palindrom_permutation('jhsabckuj ahjsbckj') == True)
-    assert (palindrom_permutation('Random Words') == False)
-    assert (palindrom_permutation('Not a Palindrome') == False)
+    assert(palindrome_permutation("Taco cat") == True)
+    assert(palindrome_permutation('jhsabckuj ahjsbckj') == True)
+    assert (palindrome_permutation('Random Words') == False)
+    assert (palindrome_permutation('Not a Palindrome') == False)
     print('Passed!')
 
 def main():
-    testpalindrom_permutation()
+    testpalindrome_permutation()
 
 
 if __name__ == '__main__':
