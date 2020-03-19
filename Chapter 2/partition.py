@@ -1,3 +1,4 @@
+# O(N)
 from LinkedList import LinkedList
 
 def partition(ll, val):
