@@ -1,3 +1,11 @@
+# [2.3] Delete Middle Node: Implement an algorithm to delete a
+# node in the middle (i.e., any node but the first and last
+# node, not necessarily the exact middle) of a singly linked
+# list, given only access to that node.
+
+# Space complexity: O(1)
+# Time complexity: O(N)
+
 from LinkedList import LinkedList
 
 def deleteNode(ll, node):

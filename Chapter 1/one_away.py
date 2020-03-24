@@ -1,4 +1,13 @@
-#O(N)
+# [1:5]. One Away: There are three types of edits that can be
+# performed on strings: insert a character, remove a character,
+# or replace a character. Given two strings, write a function
+# to check if they are one edit (or zero edits) away.
+
+# Time complexity: O(n). Where n is the shorter string
+# Space complexity: O(1). only creating pointers and a counter
+
+import unittest
+
 def one_away(str1, str2):
     char_set = [0 for _ in range(128)]
 
@@ -19,17 +28,12 @@ def one_away(str1, str2):
 
     return neg_count > -2 and pos_count < 2
 
-def testone_away():
-    print('testing one_away()...', end=" ")
-    assert(one_away('pale', 'ple') == True)
-    assert(one_away('pales', 'pale') == True)
-    assert(one_away('pale', 'bale') == True)
-    assert(one_away('pale', 'bake') == False)
-    print('Passed!')
-
-def main():
-    testone_away()
-
+class Test(unittest.TestCase):
+    def testOneAway(self):
+        self.assertTrue(one_away('pale', 'ple'))
+        self.assertTrue(one_away('pales', 'pale'))
+        self.assertTrue(one_away('pale', 'bale'))
+        self.assertFalse(one_away('pale', 'bake'))
 
 if __name__ == '__main__':
-    main()
+    unittest.main()

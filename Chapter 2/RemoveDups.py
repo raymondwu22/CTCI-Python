@@ -1,4 +1,11 @@
-# O(N)
+# [2.1] Write code to remove duplicates from an
+# unsorted linked list. What if a temporary buffer
+# is not allowed?
+
+# Hash table
+# Space complexity: O(N)
+# Time complexity: O(N)
+
 from LinkedList import LinkedList
 
 def removeDups(linkedList):

@@ -1,4 +1,7 @@
-#O(N)
+# Time complexity: O(n + m), must go through all characters for both strings
+# Space complexity: O(c), hash table will be size of available chars
+
+import unittest
 
 def checkPermutation(str1, str2):
     if len(str1) != len(str2):
@@ -20,16 +23,12 @@ def checkPermutation(str1, str2):
 
     return True
 
-
-def testcheck_permutation():
-    print('testing check_permutation()...', end=" ")
-    assert(checkPermutation('abcd', 'd2cba') == False)
-    assert(checkPermutation('dcw4f', 'dcw5f') == False)
-    assert(checkPermutation('abcd', 'd2cba') == False)
-    print('Passed!')
-
-def main():
-    testcheck_permutation()
+class Test(unittest.TestCase):
+    def testPermutation(self):
+        self.assertTrue(checkPermutation('abcde','edcba'))
+        self.assertFalse(checkPermutation('abcd', 'd2cba'))
+        self.assertFalse(checkPermutation('dcw4f', 'dcw5f'))
+        self.assertFalse(checkPermutation('abcd', 'd2cba'))
 
 if __name__ == '__main__':
-    main()
+    unittest.main()

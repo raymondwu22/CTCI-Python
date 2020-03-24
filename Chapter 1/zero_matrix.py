@@ -1,4 +1,9 @@
-# O(N*M)
+# [1.8] Zero Matrix: Write an algorithm such that if an element
+# in an MxN matrix is 0, its entire row and columns are set to 0.
+
+# Time Complexity: O(MN)
+# Space Complexity: O(M+N)
+
 import unittest
 
 def zero_matrix(matrix):

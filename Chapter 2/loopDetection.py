@@ -1,3 +1,10 @@
+# [2.8] Loop Detection: Given a circular linked list, implement
+# an algorithm that returns the node at the beginning of the
+# loop.
+
+# Space complexity: O(1)
+# Time complexity: O(n)
+
 from LinkedList import LinkedList
 
 # Floyd's cycle finding algorithm

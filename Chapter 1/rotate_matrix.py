@@ -1,10 +1,9 @@
-'''
-I: nxn matrix
-O: rotated matrix - 90 deg, clockwise
-C: rotate matrix in place
-E: empty matrix, even and odd values for n
-'''
-# O(N**2)
+# [1.7]. Given an image represented by an NxN matrix,
+# where each pixel in the image is 4 bytes, write a method to
+# rotate the image by 90 degrees. Can you do this in place?
+
+# Time complexity: O(N^2)
+# Space complexity: O(1)
 
 import unittest
 

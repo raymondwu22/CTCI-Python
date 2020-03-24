@@ -1,4 +1,8 @@
-# O(N)
+# [2.2] Return Kth to Last: Implement an algorithm to find
+# the kth to last element of a singly linked list.
+
+# Space complexity: O(1)
+# Time complexity: O(N)
 
 from LinkedList import LinkedList
 

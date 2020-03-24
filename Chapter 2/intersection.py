@@ -1,4 +1,14 @@
-# O(N+M)
+# [2.7] Intersection: Given two (singly) linked lists,
+# determine if the two lists intersect. return the
+# intersecting node. Note that the intersection is
+# defined based on reference, not value. That is, if the
+# kth node of the first linked list is the exact same
+# (by reference) as the jth node of the second linked
+# list, then they are intersecting.
+
+# Space complexity: O(1)
+# Time complexity: O(n + m)
+
 from LinkedList import LinkedList
 
 def intersection(list1, list2):

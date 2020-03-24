@@ -1,4 +1,20 @@
-#O(N)
+# 1.4. Palindrome Permutation: Given a string, write a function to check
+# if it is a permutation of a palindrome. A palindrome is a word or
+# phrase that is the same forwards and backwards. A permutation is a
+# rearrangement of letters. The palindrome does not need to be limited
+# to just dictionary words.
+
+# Input: Tact Coa
+# Output: True
+
+# Hash Table Solution
+# Time complexity: O(n) count characters and then loop through smaller
+# subset
+# Space complexity: O(c) where c is each char / Also can be thought
+# of as O(1) because set of characters is limited
+
+import unittest
+
 def palindrome_permutation(phrase):
     char_set = [0 for _ in range(128)]
     phrase = phrase.replace(" ", "").lower()
@@ -17,18 +33,12 @@ def palindrome_permutation(phrase):
 
     return odd_count <= 1
 
-
-def testpalindrome_permutation():
-    print('testing palindrom_permutation()...', end=" ")
-    assert(palindrome_permutation("Taco cat") == True)
-    assert(palindrome_permutation('jhsabckuj ahjsbckj') == True)
-    assert (palindrome_permutation('Random Words') == False)
-    assert (palindrome_permutation('Not a Palindrome') == False)
-    print('Passed!')
-
-def main():
-    testpalindrome_permutation()
-
+class Test(unittest.TestCase):
+    def testpalindrome_permutation(self):
+        self.assertTrue(palindrome_permutation("Taco cat"))
+        self.assertTrue(palindrome_permutation('jhsabckuj ahjsbckj'))
+        self.assertFalse(palindrome_permutation('Random Words'))
+        self.assertFalse(palindrome_permutation('Not a Palindrome'))
 
 if __name__ == '__main__':
-    main()
+    unittest.main()

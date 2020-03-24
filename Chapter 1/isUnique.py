@@ -1,5 +1,7 @@
-string1 = "noT rEady"
-string2 = "StrInG RepeAtEd"
+# Time complexity: O(n) because needs to check each character
+# Space complexity: O(c) where c is each character
+
+import unittest
 
 def normalize(s):
     normalized = s.replace(" ", "")
@@ -37,29 +39,21 @@ def isUniqueHash(s):
 
     return True
 
+string1 = "noT rEady"
+string2 = "StrInG RepeAtEd"
+string3 = 'aabcdefg'
 
-def testIsUniqueDict():
-    print('testing isUniqueDict()...', end=" ")
-    assert(isUniqueDict(string1) == True)
-    assert(isUniqueDict(string2) == False)
-    print('Passed!')
-
-def testIsUniqueSet():
-    print('testing isUniqueSet()...', end=" ")
-    assert (isUniqueSet(string1) == True)
-    assert (isUniqueSet(string2) == False)
-    print('Passed!')
-
-def testIsUniqueHash():
-    print('testing isUniqueHash()...', end=" ")
-    assert(isUniqueHash(string1) == True)
-    assert(isUniqueHash(string2) == False)
-    print('Passed!')
-
-def main():
-    testIsUniqueDict()
-    testIsUniqueSet()
-    testIsUniqueHash()
+class Test(unittest.TestCase):
+    def testUnique(self):
+        self.assertTrue(isUniqueDict(string1))
+        self.assertTrue(isUniqueHash(string1))
+        self.assertTrue(isUniqueSet(string1))
+        self.assertFalse(isUniqueDict(string2))
+        self.assertFalse(isUniqueHash(string2))
+        self.assertFalse(isUniqueSet(string2))
+        self.assertFalse(isUniqueDict(string3))
+        self.assertFalse(isUniqueHash(string3))
+        self.assertFalse(isUniqueSet(string3))
 
 if __name__ == '__main__':
-    main()
+    unittest.main()
